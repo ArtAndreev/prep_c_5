@@ -18,6 +18,8 @@ public:
     double operator[](int index) const;
     Vector& operator=(const Vector& rhs);
     bool is_zero_vector() const;
+    friend std::ostream& operator<<(std::ostream& os, const Vector& rhs);
+    friend Vector operator*(double lhs, const Vector& rhs);
 
 private:
     double x;
@@ -25,8 +27,6 @@ private:
     double z;
 
     void set_fields(double x, double y, double z);
-    friend std::ostream& operator<<(std::ostream& os, const Vector& rhs);
-    friend Vector operator*(double lhs, const Vector& rhs);
 };
 
 #endif //C_TASK5_VECTOR_H
